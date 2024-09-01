@@ -7,6 +7,7 @@ export default function Header({ user, onLogout }) {
         display: "flex",
         justifyContent: "space-between",
         borderBottom: "1px solid #ccc",
+        padding: "10px"
       }}
     >
       <Link to="/home">

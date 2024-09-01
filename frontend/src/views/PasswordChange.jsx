@@ -1,27 +1,28 @@
 import { useRef, useState } from "react";
-import { Navigate, Link } from "react-router-dom";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
 
-export default function Profile() {
+export default function PasswordChange() {
   const { user, setUser, setToken } = useStateContext();
   const [errors, setErrors] = useState(null);
   const [success, setSuccess] = useState(null);
-  const nameRef = useRef();
-  const emailRef = useRef();
+  const currentPasswordRef = useRef();
+  const newPasswordRef = useRef();
+  const newPasswordConfirmationRef = useRef();
 
   const onSubmit = (ev) => {
     ev.preventDefault();
     const payload = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
+      current_password: currentPasswordRef.current.value,
+      new_password: newPasswordRef.current.value,
+      new_password_confirmation: newPasswordConfirmationRef.current.value,
     };
 
     axiosClient
-      .put("/user", payload)
+      .put("/user-password", payload)
       .then(({ data }) => {
         setUser(data);
-        setSuccess("Profile was successfully updated");
+        setSuccess("Password was successfully updated");
       })
       .catch((err) => {
         const response = err.response;
@@ -31,42 +32,26 @@ export default function Profile() {
       });
   };
 
-  const onDeleteClick = (user) => {
-    if (!window.confirm("Are you sure you want to delete your account?")) {
-      return;
-    }
-    axiosClient.delete("/user").then(() => {
-      setUser({});
-      setToken(null);
-      <Navigate to="/login" />;
-    });
-  };
-
   return (
     <div>
-      <h1>Profile</h1>
+      <h1>Password Change</h1>
 
       {/* Profile form */}
       <form onSubmit={onSubmit}>
         <label>
-          Full Name:
-          <input ref={nameRef} type="text" defaultValue={user.name} required />
+          Current Password:
+          <input ref={currentPasswordRef} type="password" required />
         </label>
         <label>
-          Email:
-          <input
-            ref={emailRef}
-            type="email"
-            defaultValue={user.email}
-            required
-          />
+          New Password:
+          <input ref={newPasswordRef} type="password" required />
+        </label>
+        <label>
+          New Password Confirmation:
+          <input ref={newPasswordConfirmationRef} type="password" required />
         </label>
         <button type="submit">Save</button>
       </form>
-
-      <Link to="/password-change">Change Password</Link>
-
-      <button onClick={() => onDeleteClick(user)}>Delete My Account</button>
 
       {/* Validation errors */}
       {errors && (

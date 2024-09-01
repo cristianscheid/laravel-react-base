@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\UpdateUserPasswordRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,13 +23,29 @@ class UserController extends Controller
     {
         $data = $request->validated();
 
-        if (isset($data['password'])) {
-            $data['password'] = bcrypt($data['password']);
-        }
-
         /** @var \App\Models\User $user */
         $user = Auth::user();
         $user->update($data);
+
+        return response()->json($user);
+    }
+
+    public function updatePassword(UpdateUserPasswordRequest $request): JsonResponse
+    {
+        $data = $request->validated();
+
+        $currentPassword = $data['current_password'];
+        $newPassword = $data['new_password'];
+
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+
+        if (!Hash::check($currentPassword, $user->password)) {
+            return response()->json(['message' => 'Current password is incorrect.'], 422);
+        }
+
+        $user->password = bcrypt($newPassword);
+        $user->save();
 
         return response()->json($user);
     }

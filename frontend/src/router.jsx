@@ -3,6 +3,7 @@ import DefaultLayout from "./layouts/DefaultLayout.jsx";
 import GuestLayout from "./layouts/GuestLayout.jsx";
 import Home from "./views/Home.jsx";
 import Profile from "./views/Profile.jsx";
+import PasswordChange from "./views/PasswordChange.jsx";
 import Login from "./views/Login.jsx";
 import Signup from "./views/Signup.jsx";
 import NotFound from "./views/NotFound.jsx";
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/password-change",
+        element: <PasswordChange />,
       },
     ],
   },

@@ -51,7 +51,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout(Request $request): JsonResponse
+    public function logout(): JsonResponse
     {
         /** @var \App\Models\User $user */
         $user = Auth::user();
