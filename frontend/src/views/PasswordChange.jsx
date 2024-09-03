@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
+import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
 
 export default function PasswordChange() {
-  const { user, setUser, setToken } = useStateContext();
+  const { setUser } = useStateContext();
   const [errors, setErrors] = useState(null);
   const [success, setSuccess] = useState(null);
   const currentPasswordRef = useRef();
@@ -38,19 +40,25 @@ export default function PasswordChange() {
 
       {/* Profile form */}
       <form onSubmit={onSubmit}>
-        <label>
-          Current Password:
-          <input ref={currentPasswordRef} type="password" required />
-        </label>
-        <label>
-          New Password:
-          <input ref={newPasswordRef} type="password" required />
-        </label>
-        <label>
-          New Password Confirmation:
-          <input ref={newPasswordConfirmationRef} type="password" required />
-        </label>
-        <button type="submit">Save</button>
+        <Input
+          ref={currentPasswordRef}
+          type="password"
+          label="Current Password: "
+          required
+        />
+        <Input
+          ref={newPasswordRef}
+          type="password"
+          label="New Password: "
+          required
+        />
+        <Input
+          ref={newPasswordConfirmationRef}
+          type="password"
+          label="New Password Confirmation: "
+          required
+        />
+        <Button type="submit" label="Change Password" />
       </form>
 
       {/* Validation errors */}

@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider.jsx";
+import Button from "../components/ui/Button.jsx";
+import Input from "../components/ui/Input.jsx";
 
 export default function Signup() {
   const nameRef = useRef();
@@ -40,26 +42,31 @@ export default function Signup() {
 
       {/* Signup form */}
       <form onSubmit={onSubmit}>
-        <input ref={nameRef} type="text" placeholder="Full Name" required />
-        <input
+        <Input
+          ref={nameRef}
+          type="text"
+          placeholder="Full Name"
+          required
+        />
+        <Input
           ref={emailRef}
           type="email"
           placeholder="Email Address"
           required
         />
-        <input
+        <Input
           ref={passwordRef}
           type="password"
           placeholder="Password"
           required
         />
-        <input
+        <Input
           ref={passwordConfirmationRef}
           type="password"
           placeholder="Password Confirmation"
           required
         />
-        <button type="submit">Signup</button>
+        <Button type="submit" label="Signup" />
       </form>
 
       {/* Navigation message */}

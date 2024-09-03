@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider.jsx";
+import Button from "../components/ui/Button.jsx";
+import Input from "../components/ui/Input.jsx";
 
 export default function Login() {
   const emailRef = useRef();
@@ -42,14 +44,14 @@ export default function Login() {
 
       {/* Login form */}
       <form onSubmit={onSubmit}>
-        <input ref={emailRef} type="email" placeholder="Email" required />
-        <input
+        <Input ref={emailRef} type="email" placeholder="Email" required />
+        <Input
           ref={passwordRef}
           type="password"
           placeholder="Password"
           required
         />
-        <button type="submit">Login</button>
+        <Button type="submit" label="Login" />
       </form>
 
       {/* Navigation message */}

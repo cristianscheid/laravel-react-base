@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
+import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
 
 export default function Profile() {
   const { user, setUser, setToken } = useStateContext();
@@ -48,20 +50,21 @@ export default function Profile() {
 
       {/* Profile form */}
       <form onSubmit={onSubmit}>
-        <label>
-          Full Name:
-          <input ref={nameRef} type="text" defaultValue={user.name} required />
-        </label>
-        <label>
-          Email:
-          <input
-            ref={emailRef}
-            type="email"
-            defaultValue={user.email}
-            required
-          />
-        </label>
-        <button type="submit">Save</button>
+        <Input
+          ref={nameRef}
+          type="text"
+          label="Full Name: "
+          defaultValue={user.name}
+          required
+        />
+        <Input
+          ref={emailRef}
+          type="email"
+          label="Email: "
+          defaultValue={user.email}
+          required
+        />
+        <Button type="submit" label="Save" />
       </form>
 
       <Link to="/password-change">Change Password</Link>
