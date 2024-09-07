@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import AuthContainer from "../components/AuthContainer.jsx";
 import Button from "../components/ui/Button.jsx";
 import Input from "../components/ui/Input.jsx";
 import Form from "../components/ui/Form.jsx";
@@ -10,25 +9,31 @@ export default function LoginPage() {
   const { emailRef, passwordRef, errors, onSubmit } = useLogin();
 
   return (
-    <div>
-      <h1>Login to Your Account</h1>
-
+    <AuthContainer
+      title="Login"
+      footerText="Don't have an account?"
+      linkText="Sign up here"
+      linkTo="/signup"
+    >
       <Form onSubmit={onSubmit}>
-        <Input ref={emailRef} type="email" placeholder="Email" required />
+        <Input
+          ref={emailRef}
+          type="email"
+          label="Your email"
+          placeholder="youremail@example.com"
+          required
+        />
         <Input
           ref={passwordRef}
           type="password"
-          placeholder="Password"
+          label="Your password"
+          placeholder="Enter your password"
           required
         />
         <Button type="submit" label="Login" />
       </Form>
 
-      <p>
-        Don't have an account? <Link to="/signup">Sign up here</Link>
-      </p>
-
       {errors.length > 0 && <Notification type="error" messages={errors} />}
-    </div>
+    </AuthContainer>
   );
 }

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import AuthContainer from "../components/AuthContainer.jsx";
 import Button from "../components/ui/Button.jsx";
 import Input from "../components/ui/Input.jsx";
 import Form from "../components/ui/Form.jsx";
@@ -17,37 +16,45 @@ export default function SignUpPage() {
   } = useSignUp();
 
   return (
-    <div>
-      <h1>Create Your Account</h1>
-
+    <AuthContainer
+      title="Signup"
+      footerText="Already have an account?"
+      linkText="Log in here"
+      linkTo="/login"
+    >
       <Form onSubmit={onSubmit}>
-        <Input ref={nameRef} type="text" placeholder="Full Name" required />
+        <Input
+          ref={nameRef}
+          type="text"
+          label="Full Name"
+          placeholder="Your full name"
+          required
+        />
         <Input
           ref={emailRef}
           type="email"
-          placeholder="Email Address"
+          label="Email address"
+          placeholder="youremail@example.com"
           required
         />
         <Input
           ref={passwordRef}
           type="password"
-          placeholder="Password"
+          label="Password"
+          placeholder="Enter your password"
           required
         />
         <Input
           ref={passwordConfirmationRef}
           type="password"
-          placeholder="Password Confirmation"
+          label="Password confirmation"
+          placeholder="Confirm your password"
           required
         />
         <Button type="submit" label="Signup" />
       </Form>
 
-      <p>
-        Already have an account? <Link to="/login">Log in here</Link>
-      </p>
-
       {errors.length > 0 && <Notification type="error" messages={errors} />}
-    </div>
+    </AuthContainer>
   );
 }
