@@ -1,16 +1,18 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import axiosClient from "../axios-client";
-import { useStateContext } from "../contexts/ContextProvider.jsx";
+import axiosClient from "../services/api/axios-client.js";
+import { useStateContext } from "../services/contexts/ContextProvider.jsx";
 import Button from "../components/ui/Button.jsx";
 import Input from "../components/ui/Input.jsx";
+import Form from "../components/ui/Form.jsx";
+import Notification from "../components/ui/Notification.jsx";
 
-export default function Signup() {
+export default function SignUpPage() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState([]);
   const { setUser, setToken } = useStateContext();
 
   const onSubmit = (ev) => {
@@ -22,6 +24,8 @@ export default function Signup() {
       password_confirmation: passwordConfirmationRef.current.value,
     };
 
+    setErrors([]);
+
     axiosClient
       .post("/signup", payload)
       .then(({ data }) => {
@@ -31,23 +35,19 @@ export default function Signup() {
       .catch((err) => {
         const response = err.response;
         if (response && response.status === 422) {
-          setErrors(response.data.errors);
+          setErrors(Object.values(response.data.errors).flat());
+        } else {
+          setErrors(["An unexpected error occurred. Please try again later."]);
         }
       });
   };
 
   return (
     <div>
-      <h1>Signup for free</h1>
+      <h1>Create Your Account</h1>
 
-      {/* Signup form */}
-      <form onSubmit={onSubmit}>
-        <Input
-          ref={nameRef}
-          type="text"
-          placeholder="Full Name"
-          required
-        />
+      <Form onSubmit={onSubmit}>
+        <Input ref={nameRef} type="text" placeholder="Full Name" required />
         <Input
           ref={emailRef}
           type="email"
@@ -67,21 +67,13 @@ export default function Signup() {
           required
         />
         <Button type="submit" label="Signup" />
-      </form>
+      </Form>
 
-      {/* Navigation message */}
       <p>
-        Already registered? <Link to="/login">Sign in</Link>
+        Already have an account? <Link to="/login">Log in here</Link>
       </p>
 
-      {/* Validation errors */}
-      {errors && (
-        <div>
-          {Object.keys(errors).map((key) => (
-            <p key={key}>{errors[key][0]}</p>
-          ))}
-        </div>
-      )}
+      {errors.length > 0 && <Notification type="error" messages={errors} />}
     </div>
   );
 }

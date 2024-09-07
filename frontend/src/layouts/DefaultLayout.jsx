@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useStateContext } from "../contexts/ContextProvider";
+import { useStateContext } from "../services/contexts/ContextProvider";
 import { useEffect } from "react";
-import axiosClient from "../axios-client";
+import axiosClient from "../services/api/axios-client";
 import Header from "../components/Header";
 
 export default function DefaultLayout() {

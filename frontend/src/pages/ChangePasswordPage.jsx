@@ -1,13 +1,15 @@
 import { useRef, useState } from "react";
-import axiosClient from "../axios-client";
-import { useStateContext } from "../contexts/ContextProvider";
+import axiosClient from "../services/api/axios-client";
+import { useStateContext } from "../services/contexts/ContextProvider";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
+import Form from "../components/ui/Form";
+import Notification from "../components/ui/Notification";
 
-export default function PasswordChange() {
+export default function ChangePasswordPage() {
   const { setUser } = useStateContext();
-  const [errors, setErrors] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const [errors, setErrors] = useState([]);
+  const [success, setSuccess] = useState([]);
   const currentPasswordRef = useRef();
   const newPasswordRef = useRef();
   const newPasswordConfirmationRef = useRef();
@@ -20,26 +22,30 @@ export default function PasswordChange() {
       new_password_confirmation: newPasswordConfirmationRef.current.value,
     };
 
+    setErrors([]);
+    setSuccess([]);
+
     axiosClient
-      .put("/user-password", payload)
+      .put("/change-password", payload)
       .then(({ data }) => {
         setUser(data);
-        setSuccess("Password was successfully updated");
+        setSuccess(["Password was successfully updated"]);
       })
       .catch((err) => {
         const response = err.response;
         if (response && response.status === 422) {
-          setErrors(response.data.errors);
+          setErrors(Object.values(response.data.errors).flat());
+        } else {
+          setErrors(["An unexpected error occurred. Please try again later."]);
         }
       });
   };
 
   return (
     <div>
-      <h1>Password Change</h1>
+      <h1>Change Password</h1>
 
-      {/* Profile form */}
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <Input
           ref={currentPasswordRef}
           type="password"
@@ -59,19 +65,11 @@ export default function PasswordChange() {
           required
         />
         <Button type="submit" label="Change Password" />
-      </form>
+      </Form>
 
-      {/* Validation errors */}
-      {errors && (
-        <div>
-          {Object.keys(errors).map((key) => (
-            <p key={key}>{errors[key][0]}</p>
-          ))}
-        </div>
-      )}
+      {errors.length > 0 && <Notification type="error" messages={errors} />}
 
-      {/* Success message */}
-      {success && <div>{success}</div>}
+      {success.length > 0 && <Notification type="success" messages={success} />}
     </div>
   );
 }

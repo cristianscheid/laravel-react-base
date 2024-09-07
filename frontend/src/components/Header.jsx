@@ -11,9 +11,10 @@ export default function Header({ user, onLogout }) {
         padding: "10px",
       }}
     >
-      <Link to="/home">Home Page</Link>
+      <Link to="/">Home Page</Link>
+      <Link to="/profile">Profile</Link>
+      <Link to="/change-password">Change Password</Link>
       <span>{user.name}</span>
-      <Link to="/profile">My Profile</Link>
       <Button onClick={onLogout} label="Logout" />
     </header>
   );

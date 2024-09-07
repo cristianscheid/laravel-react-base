@@ -1,14 +1,16 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import axiosClient from "../axios-client";
-import { useStateContext } from "../contexts/ContextProvider.jsx";
+import axiosClient from "../services/api/axios-client.js";
+import { useStateContext } from "../services/contexts/ContextProvider.jsx";
 import Button from "../components/ui/Button.jsx";
 import Input from "../components/ui/Input.jsx";
+import Form from "../components/ui/Form.jsx";
+import Notification from "../components/ui/Notification.jsx";
 
-export default function Login() {
+export default function LoginPage() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState([]);
   const { setUser, setToken } = useStateContext();
 
   const onSubmit = (ev) => {
@@ -17,7 +19,9 @@ export default function Login() {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
-    setErrors(null);
+
+    setErrors([]);
+
     axiosClient
       .post("/login", payload)
       .then(({ data }) => {
@@ -27,23 +31,18 @@ export default function Login() {
       .catch((err) => {
         const response = err.response;
         if (response && response.status === 422) {
-          if (response.data.errors) {
-            setErrors(response.data.errors);
-          } else {
-            setErrors({
-              email: [response.data.message],
-            });
-          }
+          setErrors(Object.values(response.data.errors).flat());
+        } else {
+          setErrors(["An unexpected error occurred. Please try again later."]);
         }
       });
   };
 
   return (
     <div>
-      <h1>Login into your account</h1>
+      <h1>Login to Your Account</h1>
 
-      {/* Login form */}
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <Input ref={emailRef} type="email" placeholder="Email" required />
         <Input
           ref={passwordRef}
@@ -52,21 +51,13 @@ export default function Login() {
           required
         />
         <Button type="submit" label="Login" />
-      </form>
+      </Form>
 
-      {/* Navigation message */}
       <p>
-        Not registered? <Link to="/signup">Create an account</Link>
+        Don't have an account? <Link to="/signup">Sign up here</Link>
       </p>
 
-      {/* Validation errors */}
-      {errors && (
-        <div>
-          {Object.keys(errors).map((key) => (
-            <p key={key}>{errors[key][0]}</p>
-          ))}
-        </div>
-      )}
+      {errors.length > 0 && <Notification type="error" messages={errors} />}
     </div>
   );
 }

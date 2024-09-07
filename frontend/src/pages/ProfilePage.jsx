@@ -1,16 +1,19 @@
 import { useRef, useState } from "react";
-import { Navigate, Link } from "react-router-dom";
-import axiosClient from "../axios-client";
-import { useStateContext } from "../contexts/ContextProvider";
+import { useNavigate } from "react-router-dom";
+import axiosClient from "../services/api/axios-client";
+import { useStateContext } from "../services/contexts/ContextProvider";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
+import Form from "../components/ui/Form";
+import Notification from "../components/ui/Notification";
 
-export default function Profile() {
+export default function ProfilePage() {
   const { user, setUser, setToken } = useStateContext();
-  const [errors, setErrors] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const [errors, setErrors] = useState([]);
+  const [success, setSuccess] = useState([]);
   const nameRef = useRef();
   const emailRef = useRef();
+  const navigate = useNavigate();
 
   const onSubmit = (ev) => {
     ev.preventDefault();
@@ -19,28 +22,33 @@ export default function Profile() {
       email: emailRef.current.value,
     };
 
+    setErrors([]);
+    setSuccess([]);
+
     axiosClient
       .put("/user", payload)
       .then(({ data }) => {
         setUser(data);
-        setSuccess("Profile was successfully updated");
+        setSuccess(["Profile was successfully updated"]);
       })
       .catch((err) => {
         const response = err.response;
         if (response && response.status === 422) {
-          setErrors(response.data.errors);
+          setErrors(Object.values(response.data.errors).flat());
+        } else {
+          setErrors(["An unexpected error occurred. Please try again later."]);
         }
       });
   };
 
-  const onDeleteClick = (user) => {
+  const onDeleteClick = () => {
     if (!window.confirm("Are you sure you want to delete your account?")) {
       return;
     }
     axiosClient.delete("/user").then(() => {
       setUser({});
       setToken(null);
-      <Navigate to="/login" />;
+      navigate("/login");
     });
   };
 
@@ -48,8 +56,7 @@ export default function Profile() {
     <div>
       <h1>Profile</h1>
 
-      {/* Profile form */}
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <Input
           ref={nameRef}
           type="text"
@@ -64,24 +71,14 @@ export default function Profile() {
           defaultValue={user.email}
           required
         />
-        <Button type="submit" label="Save" />
-      </form>
+        <Button type="submit" label="Save Changes" />
+      </Form>
 
-      <Link to="/password-change">Change Password</Link>
+      <Button onClick={onDeleteClick} label="Delete Account" />
 
-      <button onClick={() => onDeleteClick(user)}>Delete My Account</button>
+      {errors.length > 0 && <Notification type="error" messages={errors} />}
 
-      {/* Validation errors */}
-      {errors && (
-        <div>
-          {Object.keys(errors).map((key) => (
-            <p key={key}>{errors[key][0]}</p>
-          ))}
-        </div>
-      )}
-
-      {/* Success message */}
-      {success && <div>{success}</div>}
+      {success.length > 0 && <Notification type="success" messages={success} />}
     </div>
   );
 }
