@@ -30,7 +30,17 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-    public function updatePassword(UpdateUserPasswordRequest $request): JsonResponse
+    public function destroy(): JsonResponse
+    {
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+        $user->tokens()->delete(); // Revoga todos os tokens do usuário
+        $user->delete();
+
+        return response()->json(null, 204);
+    }
+
+    public function changePassword(UpdateUserPasswordRequest $request): JsonResponse
     {
         $data = $request->validated();
 
@@ -41,22 +51,17 @@ class UserController extends Controller
         $user = Auth::user();
 
         if (!Hash::check($currentPassword, $user->password)) {
-            return response()->json(['message' => 'Current password is incorrect.'], 422);
+            return response()->json([
+                'message' => 'The current password is incorrect.',
+                'errors' => [
+                    'current_password' => ['The current password is incorrect.']
+                ]
+            ], 422);
         }
 
         $user->password = bcrypt($newPassword);
         $user->save();
 
         return response()->json($user);
-    }
-
-    public function destroy(): JsonResponse
-    {
-        /** @var \App\Models\User $user */
-        $user = Auth::user();
-        $user->tokens()->delete(); // Revoga todos os tokens do usuário
-        $user->delete();
-
-        return response()->json(null, 204);
     }
 }

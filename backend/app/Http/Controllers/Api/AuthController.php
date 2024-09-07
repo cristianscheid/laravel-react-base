@@ -38,6 +38,9 @@ class AuthController extends Controller
         if (!Auth::attempt($data)) {
             return response()->json([
                 'message' => 'Provided email address or password is incorrect.',
+                'errors' => [
+                    'email_or_password' => ['Provided email address or password is incorrect.']
+                ]
             ], 422);
         }
 
