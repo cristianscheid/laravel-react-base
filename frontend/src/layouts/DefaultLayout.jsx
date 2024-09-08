@@ -3,7 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 
 import { useStateContext } from "../services/contexts/ContextProvider";
 import axiosClient from "../services/api/axios-client";
-import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 
 export default function DefaultLayout() {
   const { user, token, setUser, setToken } = useStateContext();
@@ -28,7 +28,7 @@ export default function DefaultLayout() {
 
   return (
     <div>
-      <Header user={user} onLogout={onLogout}></Header>
+      <NavBar user={user} onLogout={onLogout} />
       <main>
         <Outlet />
       </main>
