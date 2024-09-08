@@ -27,7 +27,7 @@ export default function SignUpPage() {
           ref={nameRef}
           type="text"
           label="Full Name"
-          placeholder="Your full name"
+          placeholder="Enter your full name"
           required
         />
         <Input
