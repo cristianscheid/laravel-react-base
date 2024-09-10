@@ -3,14 +3,12 @@ import { useState, useEffect, useRef } from "react";
 import MainMenuItem from "./ui/MainMenuItem";
 import MainMenuButtonIcon from "./ui/MainMenuButtonIcon";
 
-export default function MainMenu({ navBarHeight }) {
+export default function MainMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
-
-  useEffect(() => {}, [navBarHeight]);
 
   return (
     <div className="flex items-center">
@@ -26,10 +24,9 @@ export default function MainMenu({ navBarHeight }) {
         }`}
       >
         <ul
-          className={`h-screen h-[calc(100vh-${navBarHeight}px)] flex flex-col font-medium p-4 border border-gray-100 bg-gray-50 dark:bg-gray-800 dark:border-gray-700`}
+          className={`h-screen h-[calc(100vh-72px)] flex flex-col font-medium p-4 border border-gray-100 bg-gray-50 dark:bg-gray-800 dark:border-gray-700`}
         >
           <MainMenuItem linkTo="/" label="Home" />
-          <MainMenuItem linkTo="/" label="Dashboard" />
           <MainMenuItem linkTo="/" label="About" />
           <MainMenuItem linkTo="/" label="Contact" />
         </ul>
