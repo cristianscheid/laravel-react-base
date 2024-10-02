@@ -33,6 +33,8 @@ export default function UserMenu({ user, onLogout }) {
 
   return (
     <div ref={menuRef} className="flex items-center">
+
+      {/* User avatar button */}
       <button
         className="flex text-sm bg-gray-500 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
         onClick={toggleMenu}
@@ -48,11 +50,15 @@ export default function UserMenu({ user, onLogout }) {
           />
         </svg>
       </button>
+
+      {/* Dropdown menu container */}
       <div
         className={`absolute top-full right-0 z-50 m-1 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
+
+        {/* User info */}
         <div className="p-4">
           <span className="block text-sm text-gray-900 dark:text-white">
             {user.name}
@@ -61,6 +67,8 @@ export default function UserMenu({ user, onLogout }) {
             {user.email}
           </span>
         </div>
+
+        {/* Menu items */}
         <ul className="py-2">
           {menuItems.map(({ linkTo, label }) => (
             <li key={linkTo}>
@@ -73,6 +81,8 @@ export default function UserMenu({ user, onLogout }) {
               </Link>
             </li>
           ))}
+
+          {/* Logout button */}
           <li>
             <button
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white w-full text-left"
