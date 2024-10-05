@@ -1,4 +1,4 @@
-import AuthContainer from "../components/AuthContainer.jsx";
+import AuthPageContainer from "../components/AuthPageContainer.jsx";
 import Button from "../components/ui/Button.jsx";
 import Input from "../components/ui/Input.jsx";
 import Form from "../components/ui/Form.jsx";
@@ -9,7 +9,7 @@ export default function LoginPage() {
   const { emailRef, passwordRef, errors, onSubmit } = useLogin();
 
   return (
-    <AuthContainer
+    <AuthPageContainer
       title="Login"
       footerText="Don't have an account?"
       linkText="Sign up here"
@@ -34,6 +34,6 @@ export default function LoginPage() {
       </Form>
 
       {errors.length > 0 && <Notification type="error" messages={errors} />}
-    </AuthContainer>
+    </AuthPageContainer>
   );
 }
