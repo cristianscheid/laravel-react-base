@@ -11,16 +11,16 @@ export default function AuthPageContainer({
 }) {
   return (
     <div className="flex min-h-screen dark:bg-gray-900">
-      <div className="max-w-md w-full m-auto p-5 space-y-5 dark:bg-gray-900">
-        <AppLogo></AppLogo>
-        <h2 className="text-4xl text-center font-bold dark:text-white">
+      <div className="m-auto w-full max-w-md p-5 space-y-5 dark:bg-gray-900">
+        <AppLogo />
+        <h2 className="text-center text-4xl font-bold dark:text-white">
           {title}
         </h2>
         <div className="space-y-4">{children}</div>
-        <p className="max-w-sm mx-auto dark:text-white">
+        <p className="mx-auto max-w-sm dark:text-white">
           {footerText}{" "}
           <Link
-            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            className="font-medium text-blue-600 hover:underline dark:text-blue-500"
             to={linkTo}
           >
             {linkText}

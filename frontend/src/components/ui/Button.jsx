@@ -5,7 +5,7 @@ export default function Button({
   variant = "primary",
 }) {
   const baseStyles =
-    "text-white my-4 w-full font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none";
+    "my-4 w-full font-medium rounded-lg text-sm px-5 py-2.5 text-white focus:outline-none";
 
   const colorStyles =
     variant === "primary"

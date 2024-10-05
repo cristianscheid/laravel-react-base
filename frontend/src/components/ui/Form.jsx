@@ -1,6 +1,6 @@
 export default function Form({ onSubmit, children }) {
   return (
-    <form className="max-w-sm mx-auto" onSubmit={onSubmit}>
+    <form className="mx-auto max-w-sm" onSubmit={onSubmit}>
       {children}
     </form>
   );
