@@ -36,10 +36,10 @@ export default function MainMenu() {
     <div ref={menuRef} className="flex items-center">
       {/* Menu toggle button */}
       <button
-        className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm rounded-lg focus:outline-none focus:ring-2 ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
         onClick={toggleMenu}
       >
-        <svg className="text-gray-500 dark:text-gray-400" viewBox="0 0 17 14">
+        <svg className="text-gray-400" viewBox="0 0 17 14">
           <path
             stroke="currentColor"
             strokeLinecap="round"
@@ -57,11 +57,11 @@ export default function MainMenu() {
         }`}
       >
         {/* Menu items */}
-        <ul className="flex flex-col h-[calc(100vh-72px)] p-4 text-lg font-medium bg-gray-50 dark:bg-gray-900 dark:border-gray-700">
+        <ul className="flex flex-col h-[calc(100vh-72px)] p-4 text-lg font-medium bg-gray-900 border-gray-700">
           {menuItems.map(({ linkTo, label }) => (
             <li key={linkTo}>
               <Link
-                className="block p-3 rounded text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                className="block p-3 rounded text-white hover:bg-gray-700 hover:text-white"
                 to={linkTo}
                 onClick={handleLinkClick}
               >

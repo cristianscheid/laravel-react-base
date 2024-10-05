@@ -6,7 +6,7 @@ import UserMenu from "./UserMenu";
 
 export default function NavBar({ user, onLogout }) {
   return (
-    <nav className="relative bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="relative border-gray-200 bg-gray-900">
       <div className="flex items-center justify-between p-4">
         <MainMenu />
         <Link to="/">

@@ -3,7 +3,7 @@ export default function PageContainer({ title, children, is404 = false }) {
     <div
       className={`flex flex-col items-center justify-between ${
         is404 ? "h-screen" : "h-[calc(100vh-72px)]"
-      } overflow-y-auto dark:bg-gray-800 p-5`}
+      } overflow-y-auto bg-gray-800 p-5`}
     >
       <div className="flex flex-col items-center mt-5">
         <h1 className="text-5xl font-bold text-gray-100 mb-5">{title}</h1>
