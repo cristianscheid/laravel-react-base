@@ -33,7 +33,6 @@ export default function UserMenu({ user, onLogout }) {
 
   return (
     <div ref={menuRef} className="flex items-center">
-
       {/* User avatar button */}
       <button
         className="flex text-sm bg-gray-500 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -57,7 +56,6 @@ export default function UserMenu({ user, onLogout }) {
           isMenuOpen ? "block" : "hidden"
         }`}
       >
-
         {/* User info */}
         <div className="p-4">
           <span className="block text-sm text-gray-900 dark:text-white">
