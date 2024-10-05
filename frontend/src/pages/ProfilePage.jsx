@@ -4,10 +4,21 @@ import Form from "../components/ui/Form";
 import Notification from "../components/ui/Notification";
 import useProfile from "../hooks/useProfile";
 import PageContainer from "../components/PageContainer";
+import ConfirmationModal from "../components/ui/ConfirmationModal"; // ajuste o caminho conforme necessário
 
 export default function ProfilePage() {
-  const { nameRef, emailRef, errors, success, onSubmit, onDeleteClick, user } =
-    useProfile();
+  const {
+    nameRef,
+    emailRef,
+    errors,
+    success,
+    onSubmit,
+    openModal,
+    closeModal,
+    confirmDelete,
+    user,
+    isModalOpen,
+  } = useProfile();
 
   return (
     <PageContainer title="Profile">
@@ -28,7 +39,7 @@ export default function ProfilePage() {
         />
         <Button type="submit" label="Save Changes" />
         <Button
-          onClick={onDeleteClick}
+          onClick={openModal}
           label="Delete Account"
           variant="secondary"
         />
@@ -36,6 +47,18 @@ export default function ProfilePage() {
 
       {errors.length > 0 && <Notification type="error" messages={errors} />}
       {success.length > 0 && <Notification type="success" messages={success} />}
+
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        onConfirm={() => {
+          confirmDelete();
+          closeModal();
+        }}
+        title="Are you sure you want to delete your account?"
+        confirmLabel="Yes, delete"
+        cancelLabel="No, cancel"
+      />
     </PageContainer>
   );
 }

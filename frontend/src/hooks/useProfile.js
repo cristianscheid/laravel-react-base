@@ -8,6 +8,7 @@ export default function useProfile() {
   const { user, setUser, setToken } = useStateContext();
   const [errors, setErrors] = useState([]);
   const [success, setSuccess] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const nameRef = useRef();
   const emailRef = useRef();
   const navigate = useNavigate();
@@ -38,11 +39,15 @@ export default function useProfile() {
       });
   };
 
-  const onDeleteClick = () => {
-    if (!window.confirm("Are you sure you want to delete your account?")) {
-      return;
-    }
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const confirmDelete = () => {
     setErrors([]);
     setSuccess([]);
 
@@ -64,7 +69,10 @@ export default function useProfile() {
     errors,
     success,
     onSubmit,
-    onDeleteClick,
+    openModal,
+    closeModal,
+    confirmDelete,
     user,
+    isModalOpen,
   };
 }
