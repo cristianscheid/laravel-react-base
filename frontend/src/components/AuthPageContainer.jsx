@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import AppLogo from "./ui/AppLogo";
 
-export default function AuthContainer({
+export default function AuthPageContainer({
   title,
   children,
   footerText,
