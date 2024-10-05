@@ -1,9 +1,9 @@
-import AuthPageContainer from "../components/AuthPageContainer.jsx";
-import Button from "../components/ui/Button.jsx";
-import Input from "../components/ui/Input.jsx";
-import Form from "../components/ui/Form.jsx";
-import Notification from "../components/ui/Notification.jsx";
-import useSignUp from "../hooks/useSignUp.js";
+import AuthPageContainer from "../../components/AuthPageContainer.jsx";
+import Button from "../../components/ui/Button.jsx";
+import Input from "../../components/ui/Input.jsx";
+import Form from "../../components/ui/Form.jsx";
+import Notification from "../../components/ui/Notification.jsx";
+import useSignUp from "../../hooks/useSignUp.js";
 
 export default function SignUpPage() {
   const {

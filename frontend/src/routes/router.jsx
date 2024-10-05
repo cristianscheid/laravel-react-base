@@ -7,8 +7,8 @@ import AboutPage from "../pages/AboutPage.jsx";
 import ContactPage from "../pages/ContactPage.jsx";
 import ProfilePage from "../pages/ProfilePage.jsx";
 import ChangePasswordPage from "../pages/ChangePasswordPage.jsx";
-import LoginPage from "../pages/LoginPage.jsx";
-import SignUpPage from "../pages/SignUpPage.jsx";
+import LoginPage from "../pages/Auth/LoginPage.jsx";
+import SignUpPage from "../pages/Auth/SignUpPage.jsx";
 import NotFoundPage from "../pages/NotFoundPage.jsx";
 
 const router = createBrowserRouter([
