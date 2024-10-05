@@ -1,8 +1,11 @@
+import PageContainer from "../components/PageContainer";
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Home Page Content...</p>
-    </div>
+    <PageContainer title="Laravel-React-Base">
+      <p className="text-lg text-gray-300 mb-6">
+        Backend API powered by Laravel, featuring a smooth React frontend.
+      </p>
+    </PageContainer>
   );
 }

@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "../layouts/DefaultLayout.jsx";
 import GuestLayout from "../layouts/GuestLayout.jsx";
 import HomePage from "../pages/HomePage.jsx";
+import AboutPage from "../pages/AboutPage.jsx";
+import ContactPage from "../pages/ContactPage.jsx";
 import ProfilePage from "../pages/ProfilePage.jsx";
 import ChangePasswordPage from "../pages/ChangePasswordPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/profile",
