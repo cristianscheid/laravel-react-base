@@ -22,18 +22,21 @@ export default function ChangePasswordPage() {
           ref={currentPasswordRef}
           type="password"
           label="Current Password: "
+          placeholder="Enter your current password"
           required
         />
         <Input
           ref={newPasswordRef}
           type="password"
           label="New Password: "
+          placeholder="Enter your new password"
           required
         />
         <Input
           ref={newPasswordConfirmationRef}
           type="password"
           label="New Password Confirmation: "
+          placeholder="Confirm your new password"
           required
         />
         <Button type="submit" label="Change Password" />

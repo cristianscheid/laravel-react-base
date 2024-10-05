@@ -4,7 +4,7 @@ import Form from "../components/ui/Form";
 import Notification from "../components/ui/Notification";
 import useProfile from "../hooks/useProfile";
 import PageContainer from "../components/PageContainer";
-import ConfirmationModal from "../components/ui/ConfirmationModal"; // ajuste o caminho conforme necessário
+import ConfirmationModal from "../components/ui/ConfirmationModal";
 
 export default function ProfilePage() {
   const {
@@ -45,9 +45,6 @@ export default function ProfilePage() {
         />
       </Form>
 
-      {errors.length > 0 && <Notification type="error" messages={errors} />}
-      {success.length > 0 && <Notification type="success" messages={success} />}
-
       <ConfirmationModal
         isOpen={isModalOpen}
         onClose={closeModal}
@@ -59,6 +56,9 @@ export default function ProfilePage() {
         confirmLabel="Yes, delete"
         cancelLabel="No, cancel"
       />
+
+      {errors.length > 0 && <Notification type="error" messages={errors} />}
+      {success.length > 0 && <Notification type="success" messages={success} />}
     </PageContainer>
   );
 }
