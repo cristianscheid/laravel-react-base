@@ -3,6 +3,7 @@ import Input from "../components/ui/Input";
 import Form from "../components/ui/Form";
 import Notification from "../components/ui/Notification";
 import useChangePassword from "../hooks/useChangePassword";
+import PageContainer from "../components/PageContainer";
 
 export default function ChangePasswordPage() {
   const {
@@ -15,9 +16,7 @@ export default function ChangePasswordPage() {
   } = useChangePassword();
 
   return (
-    <div>
-      <h1>Change Password</h1>
-
+    <PageContainer title="Change Password">
       <Form onSubmit={onSubmit}>
         <Input
           ref={currentPasswordRef}
@@ -41,8 +40,7 @@ export default function ChangePasswordPage() {
       </Form>
 
       {errors.length > 0 && <Notification type="error" messages={errors} />}
-
       {success.length > 0 && <Notification type="success" messages={success} />}
-    </div>
+    </PageContainer>
   );
 }
