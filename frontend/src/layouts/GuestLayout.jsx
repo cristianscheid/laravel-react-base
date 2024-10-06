@@ -10,8 +10,8 @@ export default function GuestLayout() {
   }
 
   return (
-    <div>
+    <main>
       <Outlet />
-    </div>
+    </main>
   );
 }

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-import { useStateContext } from "../services/contexts/ContextProvider";
+import NavBar from "../components/NavBar";
 import axiosClient from "../services/api/axios-client";
-import Header from "../components/Header";
+import { useStateContext } from "../services/contexts/ContextProvider";
 
 export default function DefaultLayout() {
   const { user, token, setUser, setToken } = useStateContext();
@@ -28,7 +28,7 @@ export default function DefaultLayout() {
 
   return (
     <div>
-      <Header user={user} onLogout={onLogout}></Header>
+      <NavBar user={user} onLogout={onLogout} />
       <main>
         <Outlet />
       </main>

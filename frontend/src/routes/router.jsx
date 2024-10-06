@@ -2,12 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 
 import DefaultLayout from "../layouts/DefaultLayout.jsx";
 import GuestLayout from "../layouts/GuestLayout.jsx";
-import HomePage from "../pages/HomePage.jsx";
-import ProfilePage from "../pages/ProfilePage.jsx";
+import AboutPage from "../pages/AboutPage.jsx";
+import LoginPage from "../pages/auth/LoginPage.jsx";
+import SignUpPage from "../pages/auth/SignUpPage.jsx";
 import ChangePasswordPage from "../pages/ChangePasswordPage.jsx";
-import LoginPage from "../pages/LoginPage.jsx";
-import SignUpPage from "../pages/SignUpPage.jsx";
+import ContactPage from "../pages/ContactPage.jsx";
+import HomePage from "../pages/HomePage.jsx";
 import NotFoundPage from "../pages/NotFoundPage.jsx";
+import ProfilePage from "../pages/ProfilePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/profile",

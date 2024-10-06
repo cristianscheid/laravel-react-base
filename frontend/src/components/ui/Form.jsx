@@ -1,3 +1,7 @@
 export default function Form({ onSubmit, children }) {
-  return <form onSubmit={onSubmit}>{children}</form>;
+  return (
+    <form className="max-w-sm mx-auto" onSubmit={onSubmit}>
+      {children}
+    </form>
+  );
 }
