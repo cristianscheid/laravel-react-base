@@ -3,7 +3,7 @@ import PageContainer from "../components/PageContainer";
 export default function ContactPage() {
   return (
     <PageContainer title="Get in Touch">
-      <p className="mb-6 text-lg text-gray-300">
+      <p className="mb-6 text-lg text-center text-gray-300">
         Feel free to reach out if you have any questions or would like to
         connect.
       </p>

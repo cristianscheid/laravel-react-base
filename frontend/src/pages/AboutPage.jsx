@@ -3,7 +3,7 @@ import PageContainer from "../components/PageContainer";
 export default function AboutPage() {
   return (
     <PageContainer title="About This Project">
-      <p className="mb-6 text-lg text-gray-300">
+      <p className="mb-6 text-lg text-center text-gray-300">
         This project serves as a minimal template designed for rapid
         development.
       </p>
