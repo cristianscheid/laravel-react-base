@@ -17,6 +17,7 @@ This project serves as a minimal template for rapid development, using Laravel a
 ![PHP](https://img.shields.io/badge/PHP-8.3-gray?logo=php&style=for-the-badge)
 ![Laravel](https://img.shields.io/badge/Laravel-11.21-gray?logo=laravel&style=for-the-badge)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-gray?logo=mysql&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-gray?logo=javascript&style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18.3-gray?logo=react&style=for-the-badge)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-gray?logo=tailwindcss&style=for-the-badge)
 
