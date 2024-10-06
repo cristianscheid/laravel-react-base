@@ -23,6 +23,8 @@ This project serves as a minimal template for rapid development, using Laravel a
 
 https://github.com/user-attachments/assets/bf550b43-efe7-4bb8-9a05-2a1cb257cbf3
 
+https://github.com/user-attachments/assets/6042e15b-dc1f-483a-b3a1-299daeeb0460
+
 ## Installation
 
 To get started with this project, follow the steps below:
