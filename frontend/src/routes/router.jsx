@@ -2,14 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 
 import DefaultLayout from "../layouts/DefaultLayout.jsx";
 import GuestLayout from "../layouts/GuestLayout.jsx";
-import HomePage from "../pages/HomePage.jsx";
 import AboutPage from "../pages/AboutPage.jsx";
-import ContactPage from "../pages/ContactPage.jsx";
-import ProfilePage from "../pages/ProfilePage.jsx";
-import ChangePasswordPage from "../pages/ChangePasswordPage.jsx";
 import LoginPage from "../pages/Auth/LoginPage.jsx";
 import SignUpPage from "../pages/Auth/SignUpPage.jsx";
+import ChangePasswordPage from "../pages/ChangePasswordPage.jsx";
+import ContactPage from "../pages/ContactPage.jsx";
+import HomePage from "../pages/HomePage.jsx";
 import NotFoundPage from "../pages/NotFoundPage.jsx";
+import ProfilePage from "../pages/ProfilePage.jsx";
 
 const router = createBrowserRouter([
   {

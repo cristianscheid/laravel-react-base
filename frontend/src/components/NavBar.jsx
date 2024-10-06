@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import AppLogo from "./ui/AppLogo";
 import MainMenu from "./MainMenu";
+import AppLogo from "./ui/AppLogo";
 import UserMenu from "./UserMenu";
 
 export default function NavBar({ user, onLogout }) {

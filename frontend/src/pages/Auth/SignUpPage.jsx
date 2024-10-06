@@ -1,7 +1,7 @@
 import AuthPageContainer from "../../components/AuthPageContainer.jsx";
 import Button from "../../components/ui/Button.jsx";
-import Input from "../../components/ui/Input.jsx";
 import Form from "../../components/ui/Form.jsx";
+import Input from "../../components/ui/Input.jsx";
 import Notification from "../../components/ui/Notification.jsx";
 import useSignUp from "../../hooks/useSignUp.js";
 

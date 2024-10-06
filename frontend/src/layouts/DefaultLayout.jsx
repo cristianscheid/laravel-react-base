@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-import { useStateContext } from "../services/contexts/ContextProvider";
-import axiosClient from "../services/api/axios-client";
 import NavBar from "../components/NavBar";
+import axiosClient from "../services/api/axios-client";
+import { useStateContext } from "../services/contexts/ContextProvider";
 
 export default function DefaultLayout() {
   const { user, token, setUser, setToken } = useStateContext();

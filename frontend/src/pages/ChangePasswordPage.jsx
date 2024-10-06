@@ -1,9 +1,9 @@
+import PageContainer from "../components/PageContainer";
 import Button from "../components/ui/Button";
-import Input from "../components/ui/Input";
 import Form from "../components/ui/Form";
+import Input from "../components/ui/Input";
 import Notification from "../components/ui/Notification";
 import useChangePassword from "../hooks/useChangePassword";
-import PageContainer from "../components/PageContainer";
 
 export default function ChangePasswordPage() {
   const {

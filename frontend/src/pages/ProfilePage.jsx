@@ -1,10 +1,10 @@
+import PageContainer from "../components/PageContainer";
 import Button from "../components/ui/Button";
-import Input from "../components/ui/Input";
+import ConfirmationModal from "../components/ui/ConfirmationModal";
 import Form from "../components/ui/Form";
+import Input from "../components/ui/Input";
 import Notification from "../components/ui/Notification";
 import useProfile from "../hooks/useProfile";
-import PageContainer from "../components/PageContainer";
-import ConfirmationModal from "../components/ui/ConfirmationModal";
 
 export default function ProfilePage() {
   const {
