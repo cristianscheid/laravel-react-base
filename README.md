@@ -13,10 +13,10 @@ This project serves as a minimal template for rapid development using Laravel fo
 
 ## Built With
 
-![PHP](https://img.shields.io/badge/PHP-8.3.12-gray?logo=php)
-![Laravel](https://img.shields.io/badge/Laravel-11.21.0-gray?logo=laravel)
-![React](https://img.shields.io/badge/React-18.3.1-gray?logo=react)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4.10-gray?logo=tailwindcss)
+![PHP](https://img.shields.io/badge/PHP-8.3-gray?logo=php)
+![Laravel](https://img.shields.io/badge/Laravel-11.21-gray?logo=laravel)
+![React](https://img.shields.io/badge/React-18.3-gray?logo=react)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-gray?logo=tailwindcss)
 
 ## Visuals
 
@@ -35,26 +35,26 @@ To get started with this project, follow the steps below:
 
 2. **Install dependencies**
 
-   - For the backend (Laravel):
+   `project-root/backend$`
 
    ```bash
-   cd backend
    composer install
    ```
 
-   - For the frontend (React):
+   `project-root/frontend$`
 
    ```bash
-   cd frontend
    npm install
    ```
 
 3. **Set up environment variables**
 
-   - In the `backend` directory, copy the `.env.example` file to create your `.env` file, then configure your database and other settings.
-   - In the `frontend` directory, copy the `.env.example` file to create your `.env` file and set the API base URL, which points to where your Laravel application is running.
+   - In the `backend` directory, copy the `.env.example` file to create your `.env` file. Configure your database and settings (you can keep the default settings to use SQLite for simplicity).
+   - In the `frontend` directory, copy the `.env.example` file to create your `.env` file and set the API base URL, which should point to your Laravel application (default: `http://localhost:8000`).
 
 4. **Run migrations**
+
+   `project-root/backend$`
 
    ```bash
    php artisan migrate
@@ -62,13 +62,13 @@ To get started with this project, follow the steps below:
 
 5. **Start the servers**
 
-   - For the backend:
+   `project-root/backend$`
 
    ```bash
    php artisan serve
    ```
 
-   - For the frontend:
+   `project-root/frontend$`
 
    ```bash
    npm run dev
@@ -77,16 +77,6 @@ To get started with this project, follow the steps below:
 ## Usage
 
 Once the application is running, you can access it at `http://localhost:5173`.
-
-## Support
-
-For help, please open an issue in this repository or contact me at [your.email@example.com].
-
-## Roadmap
-
-- Add more complex user roles and permissions
-- Integrate additional features like email verification
-- Improve UI/UX components
 
 ## License
 
@@ -99,7 +89,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 2. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Project Status
-
-Development is ongoing. Feel free to fork the project or contribute as you see fit!
