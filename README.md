@@ -1,4 +1,4 @@
-# Laravel-React-Base
+# Laravel & React Base
 
 ## Description
 
