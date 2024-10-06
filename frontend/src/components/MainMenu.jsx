@@ -36,7 +36,7 @@ export default function MainMenu() {
     <div ref={menuRef} className="flex items-center">
       {/* Menu toggle button */}
       <button
-        className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm rounded-lg focus:outline-none focus:ring-2 ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+        className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-400 rounded-lg focus:outline-none focus:ring-2 ring-gray-200 hover:bg-gray-700 focus:ring-gray-600"
         onClick={toggleMenu}
       >
         <svg className="text-gray-400" viewBox="0 0 17 14">
@@ -61,7 +61,7 @@ export default function MainMenu() {
           {menuItems.map(({ linkTo, label }) => (
             <li key={linkTo}>
               <Link
-                className="block p-3 rounded text-white hover:bg-gray-700 hover:text-white"
+                className="block p-3 text-white rounded hover:bg-gray-700 hover:text-white"
                 to={linkTo}
                 onClick={handleLinkClick}
               >

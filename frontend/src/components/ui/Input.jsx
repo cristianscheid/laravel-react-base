@@ -15,7 +15,7 @@ const Input = forwardRef(
           placeholder={placeholder}
           required={required}
           ref={ref}
-          className="block w-full rounded-lg border p-2.5 text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:border-blue-500 focus:ring-blue-500"
+          className="block w-full p-2.5 text-sm text-white placeholder-gray-400 bg-gray-700 border rounded-lg border-gray-600 focus:border-blue-500 focus:ring-blue-500"
         />
       </div>
     );

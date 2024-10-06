@@ -35,7 +35,7 @@ export default function UserMenu({ user, onLogout }) {
     <div ref={menuRef} className="flex items-center">
       {/* User avatar button */}
       <button
-        className="flex text-sm bg-gray-500 rounded-full focus:ring-4 focus:ring-gray-600"
+        className="flex rounded-full bg-gray-500 focus:ring-4 focus:ring-gray-600"
         onClick={toggleMenu}
       >
         <svg className="size-8" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export default function UserMenu({ user, onLogout }) {
 
       {/* Dropdown menu container */}
       <div
-        className={`absolute top-full right-0 z-50 m-1 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600 ${
+        className={`absolute top-full right-0 z-50 m-1 rounded-lg shadow bg-gray-700 divide-y divide-gray-600 text-base list-none ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
@@ -69,7 +69,7 @@ export default function UserMenu({ user, onLogout }) {
           {menuItems.map(({ linkTo, label }) => (
             <li key={linkTo}>
               <Link
-                className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white"
+                className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white"
                 to={linkTo}
                 onClick={handleLinkClick}
               >
@@ -81,7 +81,7 @@ export default function UserMenu({ user, onLogout }) {
           {/* Logout button */}
           <li>
             <button
-              className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white w-full text-left"
+              className="block w-full px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white text-left"
               onClick={onLogout}
             >
               Logout
