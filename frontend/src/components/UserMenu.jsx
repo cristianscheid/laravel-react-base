@@ -52,7 +52,7 @@ export default function UserMenu({ user, onLogout }) {
 
       {/* Dropdown menu container */}
       <div
-        className={`absolute top-full right-0 z-50 m-1 text-base list-none bg-white divide-y rounded-lg shadow bg-gray-700 divide-gray-600 ${
+        className={`absolute top-full right-0 z-50 m-1 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600 ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
