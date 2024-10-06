@@ -3,7 +3,7 @@ import PageContainer from "../components/PageContainer";
 export default function ContactPage() {
   return (
     <PageContainer title="Get in Touch">
-      <p className="text-md text-gray-300 mb-6">
+      <p className="text-lg text-gray-300 mb-6">
         Feel free to reach out if you have any questions or would like to
         connect.
       </p>
@@ -19,7 +19,6 @@ export default function ContactPage() {
             <p className="text-md text-gray-400">Full Stack Developer</p>
           </div>
         </div>
-
         <div className="flex space-x-4 mt-4">
           <a
             href="https://www.linkedin.com/in/cristian-scheid/"
@@ -48,8 +47,7 @@ export default function ContactPage() {
             />
           </a>
         </div>
-
-        <p className="text-md text-gray-400 mt-6 max-w-lg">
+        <p className="text-md text-gray-400 max-w-lg mt-6">
           I'm always open to discussing new projects, creative ideas, or
           opportunities to collaborate. Let’s connect and bring our ideas to
           life!
