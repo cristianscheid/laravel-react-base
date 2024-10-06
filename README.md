@@ -28,7 +28,7 @@ To get started with this project, follow the steps below:
 
 1. **Clone the repository**
 
-   ```bash
+   ```
    git clone https://github.com/cristianscheid/laravel-react-base.git
    cd laravel-react-base
    ```
@@ -37,26 +37,39 @@ To get started with this project, follow the steps below:
 
    `project-root/backend$`
 
-   ```bash
+   ```
    composer install
    ```
 
    `project-root/frontend$`
 
-   ```bash
+   ```
    npm install
    ```
 
 3. **Set up environment variables**
 
-   - In the `backend` directory, copy the `.env.example` file to create your `.env` file. Configure your database and settings (you can keep the default settings to use SQLite for simplicity).
-   - In the `frontend` directory, copy the `.env.example` file to create your `.env` file and set the API base URL, which should point to your Laravel application (default: `http://localhost:8000`).
+   `project-root/backend$`
+
+   ```
+   cp .env.example .env
+   ```
+
+   Open the newly created `.env` file and configure your database and other settings (you can keep the default settings to use SQLite for simplicity).
+
+   `project-root/frontend$`
+
+   ```
+   cp .env.example .env
+   ```
+
+   Open the `.env` file and set the API base URL to point to your Laravel application (default: `http://localhost:8000`).
 
 4. **Run migrations**
 
    `project-root/backend$`
 
-   ```bash
+   ```
    php artisan migrate
    ```
 
@@ -64,13 +77,13 @@ To get started with this project, follow the steps below:
 
    `project-root/backend$`
 
-   ```bash
+   ```
    php artisan serve
    ```
 
    `project-root/frontend$`
 
-   ```bash
+   ```
    npm run dev
    ```
 
