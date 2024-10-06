@@ -21,7 +21,7 @@ This project serves as a minimal template for rapid development, using Laravel a
 
 ## Visuals
 
-![Project Screenshot](link-to-your-screenshot.png)
+https://github.com/user-attachments/assets/bf550b43-efe7-4bb8-9a05-2a1cb257cbf3
 
 ## Installation
 
