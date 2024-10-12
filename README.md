@@ -49,7 +49,7 @@ To get started with this project, follow the steps below:
    composer install
    ```
 
-   Set up environment variables
+   > Set up environment variables
 
    ```
    cp .env.example .env
