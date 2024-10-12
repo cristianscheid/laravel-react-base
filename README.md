@@ -4,8 +4,6 @@
 
 This project serves as a minimal template for rapid development, using Laravel as a REST API for the backend and React for the frontend, all styled with Tailwind CSS. It features user authentication and profile management, providing a solid foundation for building more complex applications.
 
-> Note: A branch `raw` is available, providing the same project without any styling. This is useful for those who prefer plain CSS or frameworks like Bootstrap instead of Tailwind CSS. The installation process remains the same; simply use `git clone -b raw` to clone the repository.
-
 ### Features
 
 - User signup and login
@@ -13,6 +11,8 @@ This project serves as a minimal template for rapid development, using Laravel a
 - Password change functionality
 - Protected routes using Laravel Sanctum for authentication
 - Mobile-first design approach with responsive layouts
+
+> Note: A branch `raw` is available, providing the same project without any styling. This is useful for those who prefer plain CSS or frameworks like Bootstrap instead of Tailwind CSS. The installation process remains the same; simply use `git clone -b raw` to clone the repository.
 
 ## Built With
 
