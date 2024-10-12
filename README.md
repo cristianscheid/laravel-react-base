@@ -44,9 +44,9 @@ To get started with this project, follow the steps below:
    - Navigate to the backend directory (`/laravel-react-base/backend/`)
    - Install dependencies
 
-   ```
-   composer install
-   ```
+      ```
+      composer install
+      ```
 
    - Set up environment variables
 
