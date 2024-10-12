@@ -93,7 +93,7 @@ To get started with this project, follow the steps below:
    php artisan serve
    ```
 
-   - From frontend directory (`/laravel-react-base/frontend/`)
+   - From frontend directory (`/laravel-react-base/frontend/`)\
 
    ```
    npm run dev
