@@ -39,55 +39,61 @@ To get started with this project, follow the steps below:
    cd laravel-react-base
    ```
 
-2. **Install dependencies**
+2. **Set up backend environment**
 
-   `project-root/backend$`
+   - Navigate to the backend directory (`/laravel-react-base/backend/`)
+   - Install dependencies
 
    ```
    composer install
    ```
 
-   `project-root/frontend$`
-
-   ```
-   npm install
-   ```
-
-3. **Set up environment variables**
-
-   `project-root/backend$`
+   - Set up environment variables
 
    ```
    cp .env.example .env
    ```
 
-   Open the `.env` file and configure your database and other settings (you can keep the default settings to use SQLite for simplicity).
+   > Open the `.env` file and configure your database and other settings (you can keep the default settings to use SQLite for simplicity)
 
-   `project-root/frontend$`
+   - Generate application key
 
    ```
-   cp .env.example .env
+   php artisan key:generate --ansi
    ```
 
-   Open the `.env` file and set the API base URL to point to your Laravel application (default: `http://localhost:8000`).
-
-4. **Run migrations**
-
-   `project-root/backend$`
+   - Run database migrations
 
    ```
    php artisan migrate
    ```
 
-5. **Start the servers**
+3. **Set up frontend environment**
 
-   `project-root/backend$`
+   - Navigate to the frontend directory (`/laravel-react-base/frontend/`)
+   - Install dependencies
+
+   ```
+   npm install
+   ```
+
+   - Set up environment variables
+
+   ```
+   cp .env.example .env
+   ```
+
+   > Open the `.env` file and set the API base URL to point to your Laravel application (default: `http://localhost:8000`)
+
+4. **Start the servers**
+
+   - From backend directory (`/laravel-react-base/backend/`)
 
    ```
    php artisan serve
    ```
 
-   `project-root/frontend$`
+   - From frontend directory (`/laravel-react-base/frontend/`)
 
    ```
    npm run dev
