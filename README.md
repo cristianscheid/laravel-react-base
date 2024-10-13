@@ -41,7 +41,7 @@ To get started with this project, follow the steps below:
 
 2. **Set up backend environment**
 
-   - Navigate to the backend directory (`/laravel-react-base/backend/`).
+   - Navigate to the backend directory (`laravel-react-base/backend/`).
    - Install dependencies:
 
      ```
@@ -70,7 +70,7 @@ To get started with this project, follow the steps below:
 
 3. **Set up frontend environment**
 
-   - Navigate to the frontend directory (`/laravel-react-base/frontend/`).
+   - Navigate to the frontend directory (`laravel-react-base/frontend/`).
    - Install dependencies:
 
      ```
@@ -87,13 +87,13 @@ To get started with this project, follow the steps below:
 
 4. **Start the servers**
 
-   - From backend directory (`/laravel-react-base/backend/`):
+   - From backend directory (`laravel-react-base/backend/`):
 
      ```
      php artisan serve
      ```
 
-   - From frontend directory (`/laravel-react-base/frontend/`):
+   - From frontend directory (`laravel-react-base/frontend/`):
 
      ```
      npm run dev
