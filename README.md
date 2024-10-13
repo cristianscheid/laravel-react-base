@@ -6,11 +6,11 @@ This project serves as a minimal template for rapid development, using Laravel a
 
 ### Features
 
-- User signup and login
-- Profile viewing, updating, and deletion
-- Password change functionality
-- Protected routes using Laravel Sanctum for authentication
-- Mobile-first design approach with responsive layouts
+- User signup and login.
+- Profile viewing, updating, and deletion.
+- Password change functionality.
+- Protected routes using Laravel Sanctum for authentication.
+- Mobile-first design approach with responsive layouts.
 
 A branch `raw` is also available, providing the same project without any styling. This is useful for those who prefer plain CSS or frameworks like Bootstrap instead of Tailwind CSS. The installation process remains the same; simply use `git clone -b raw` to clone the repository.
 
