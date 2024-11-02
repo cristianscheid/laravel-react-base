@@ -19,14 +19,14 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password'])
+            'password' => bcrypt($data['password']),
         ]);
 
         $token = $user->createToken('main')->plainTextToken;
 
         return response()->json([
             'user' => $user,
-            'token' => $token
+            'token' => $token,
         ]);
     }
 
@@ -34,12 +34,14 @@ class AuthController extends Controller
     {
         $data = $request->validated();
 
-        if (!Auth::attempt($data)) {
+        if (! Auth::attempt($data)) {
             return response()->json([
                 'message' => 'Provided email address or password is incorrect.',
                 'errors' => [
-                    'email_or_password' => ['Provided email address or password is incorrect.']
-                ]
+                    'email_or_password' => [
+                        'Provided email address or password is incorrect.',
+                    ],
+                ],
             ], 422);
         }
 
@@ -49,7 +51,7 @@ class AuthController extends Controller
 
         return response()->json([
             'user' => $user,
-            'token' => $token
+            'token' => $token,
         ]);
     }
 
