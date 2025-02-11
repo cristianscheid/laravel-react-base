@@ -12,7 +12,7 @@ This project serves as a minimal template for rapid development, using Laravel a
 - Protected routes using Laravel Sanctum for authentication.
 - Mobile-first design approach with responsive layouts.
 
-A branch `raw` is also available, providing the same project without any styling. This is useful for those who prefer plain CSS or frameworks like Bootstrap instead of Tailwind CSS. The installation process remains the same; simply use `git clone -b raw` to clone the repository.
+A branch `raw` is also available, providing the same project without any styling. This is useful for those who prefer plain CSS or frameworks like Bootstrap instead of Tailwind CSS. The installation process remains the same; simply use `git clone -b raw https://github.com/cristianscheid/laravel-react-base.git` to clone the repository.
 
 ## Built With
 
