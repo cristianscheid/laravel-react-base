@@ -34,7 +34,7 @@ class UserController extends Controller
     {
         /** @var \App\Models\User $user */
         $user = Auth::user();
-        $user->tokens()->delete(); // Revoga todos os tokens do usuário
+        $user->tokens()->delete();
         $user->delete();
 
         return response()->json(null, 204);
