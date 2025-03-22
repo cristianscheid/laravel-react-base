@@ -16,13 +16,13 @@ A branch `raw` is also available, providing the same project without any styling
 
 ## Built With
 
-![PHP](https://img.shields.io/badge/PHP-8.3-gray?logo=php&style=for-the-badge)
-![Laravel](https://img.shields.io/badge/Laravel-11.21-gray?logo=laravel&style=for-the-badge)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-gray?logo=mysql&style=for-the-badge)
+![PHP][php-badge]
+![Laravel][laravel-badge]
+![MySQL][mysql-badge]
 
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-gray?logo=javascript&style=for-the-badge)
-![React](https://img.shields.io/badge/React-18.3-gray?logo=react&style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-gray?logo=tailwindcss&style=for-the-badge)
+![JavaScript][javascript-badge]
+![React][react-badge]
+![Tailwind CSS][tailwindcss-badge]
 
 ## Visuals
 
@@ -106,3 +106,12 @@ Once the application is running, you can access it at `http://localhost:5173`.
 ## License
 
 Distributed under the MIT License. See LICENSE.txt for more information.
+
+<!-- Badges for 'Built With' section -->
+
+[php-badge]: https://img.shields.io/badge/PHP-8.3-gray?style=for-the-badge&logo=php&logoColor=white
+[laravel-badge]: https://img.shields.io/badge/Laravel-11.21-gray?style=for-the-badge&logo=laravel&logoColor=white
+[mysql-badge]: https://img.shields.io/badge/MySQL-8.0-gray?style=for-the-badge&logo=mysql&logoColor=white
+[javascript-badge]: https://img.shields.io/badge/JavaScript-ES6-gray?style=for-the-badge&logo=javascript&logoColor=white
+[react-badge]: https://img.shields.io/badge/React-18.3-gray?style=for-the-badge&logo=react&logoColor=white
+[tailwindcss-badge]: https://img.shields.io/badge/TailwindCSS-3.4-gray?style=for-the-badge&logo=tailwindcss&logoColor=white
