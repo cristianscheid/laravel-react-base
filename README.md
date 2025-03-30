@@ -114,4 +114,4 @@ Distributed under the MIT License. See LICENSE.txt for more information.
 [mysql-badge]: https://img.shields.io/badge/MySQL-8.0-gray?style=for-the-badge&logo=mysql&logoColor=white
 [javascript-badge]: https://img.shields.io/badge/JavaScript-ES6-gray?style=for-the-badge&logo=javascript&logoColor=white
 [react-badge]: https://img.shields.io/badge/React-18.3-gray?style=for-the-badge&logo=react&logoColor=white
-[tailwindcss-badge]: https://img.shields.io/badge/TailwindCSS-3.4-gray?style=for-the-badge&logo=tailwindcss&logoColor=white
+[tailwindcss-badge]: https://img.shields.io/badge/Tailwind%20CSS-3.4-gray?style=for-the-badge&logo=tailwindcss&logoColor=white
